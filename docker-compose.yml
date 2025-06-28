@@ -1,0 +1,25 @@
+services:
+  # Main API service
+  user-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=development
+      - DATABASE_URL=sqlite+aiosqlite:///./users.db
+      - SECRET_KEY=your-super-secret-key-change-in-production
+      - DEBUG=true
+      - LOG_LEVEL=INFO
+      - ACCESS_TOKEN_EXPIRE_MINUTES=30
+      - REFRESH_TOKEN_EXPIRE_DAYS=7
+      - ALLOWED_HOSTS=*
+      - DEFAULT_PAGE_SIZE=20
+      - MAX_PAGE_SIZE=100
+    volumes:
+      - .:/app
+      - sqlite_data:/app/data
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    restart: unless-stopped
+
+volumes:
+  sqlite_data:
