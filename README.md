@@ -44,7 +44,7 @@ app/
 └── tests/          # Automated tests
     ├── test_users.py     # User tests
     └── test_auth.py      # Authentication tests
-
+```
 ## 🛠️ Technologies Used
 
 - **FastAPI**: Modern, high-performance web framework
