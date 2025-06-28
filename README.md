@@ -18,7 +18,7 @@ Professional user management microservice built with **FastAPI** and **SQLite**,
 
 ## 🏗️ Project Architecture
 
-\`\`\`
+```text
 app/
 ├── core/           # Core configuration and utilities
 │   ├── config.py          # Configuration with Pydantic Settings
@@ -44,7 +44,6 @@ app/
 └── tests/          # Automated tests
     ├── test_users.py     # User tests
     └── test_auth.py      # Authentication tests
-\`\`\`
 
 ## 🛠️ Technologies Used
 
